@@ -17,7 +17,7 @@
     <header class="header">
       <nav class="nav">
         <ul>
-          <li>
+          <li class="li-logo">
             <a href=""><img src="img/logo.png" class="logo" alt="" /> </a>
           </li>
           <li>
@@ -35,17 +35,19 @@
           <li>
             <a href=""><span>IPad</span></a>
           </li>
-          <li>
+          <li class="li-itunes">
             <a href=""><span>Itunes</span></a>
           </li>
-          <li>
+          <li class="li-support">
             <a href=""><span>Support</span></a>
           </li>
-          <li><label for=""></label><input type="text" /></li>
+          <li>
+            <input class="nav-input" type="text" placeholder="" />
+          </li>
         </ul>
       </nav>
 
-      <section class="hero-section">
+      <div class="hero-section">
         <a href="">
           <img
             src="https://web.archive.org/web/20140301004610im_/http://images.apple.com/home/images/your_verse_title_small.png"
@@ -64,7 +66,7 @@
             src="https://web.archive.org/web/20140301004610im_/http://images.apple.com/home/images/cta_your_verse_27pt.png"
             alt=""
         /></a>
-      </section>
+      </div>
     </header>
 
     <aside class="ad-area">
@@ -108,23 +110,60 @@
         </p>
 
         <ul>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
-          <li><a href="">link</a></li>
+          <li><a href="">Site Map</a></li>
+          <li><a href="">Hot News</a></li>
+          <li><a href="">RSS Feeds</a></li>
+          <li><a href="">Media Info</a></li>
+          <li><a href="">Environment</a></li>
+          <li><a href="">Job Opportunities</a></li>
+          <li><a href="">Contact Us</a></li>
           <li>
-            <a href=""><img width="15" height="15" src="" alt=""/></a>
+            <a href=""
+              ><img
+                class="flag"
+                width="15"
+                height="15"
+                src="https://web.archive.org/web/20140301004610im_/http://images.apple.com/global/elements/flags/16x16/usa.png"
+                alt=""
+            /></a>
           </li>
         </ul>
       </div>
 
-      <P
-        >Copyright © 2014 Apple Inc. All rights reserved. <a>Terms of Use</a>
-        <a>Privacy Policy</a></P
+      <P class="privacy"
+        >Copyright © 2014 Apple Inc. All rights reserved.
+        <a href="">Terms of Use</a> <a href="">Privacy Policy</a></P
       >
     </footer>
+
+    <script>
+      let input = document.querySelector(".nav-input");
+      let itunes = document.querySelector(".li-itunes");
+      let support = document.querySelector(".li-support");
+
+      function animate() {
+        itunes.style.paddingLeft = "4px";
+        support.style.paddingRight = "6px";
+        support.style.paddingLeft = "4px";
+
+        input.style.width = "200px";
+        input.style.background = "white";
+        console.dir("working");
+        input.style.backgroundImage =
+          "url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGJhc2VQcm9maWxlPSJmdWxsIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpldj0iaHR0cDovL3d3dy53My5vcmcvMjAwMS94bWwtZXZlbnRzIj4KPGc%2BCgk8cG9seWdvbiBmaWxsPSIjNjY2IiBwb2ludHM9IjkuMjA3LDYuMTI2IDcuNzkzLDcuNTQxIDExLjc5MywxMS41NDEgMTMuMjA3LDEwLjEyNiIgLz4KCTxwYXRoIGZpbGw9IiM2NjYiIGQ9Ik01LjkxNywyYzEuNjA4LDAsMi45MTcsMS4zMDgsMi45MTcsMi45MTdTNy41MjUsNy44MzMsNS45MTcsNy44MzNTMyw2LjUyNSwzLDQuOTE3UzQuMzA4LDIsNS45MTcsMgoJCSBNNS45MTcsMEMzLjIwMSwwLDEsMi4yMDEsMSw0LjkxN3MyLjIwMSw0LjkxNyw0LjkxNyw0LjkxN3M0LjkxNy0yLjIwMSw0LjkxNy00LjkxN0MxMC44MzMsMi4yMDEsOC42MzIsMCw1LjkxNywwTDUuOTE3LDB6IiAvPgo8L2c%2BCjwvc3ZnPgo%3D)";
+        input.style.backgroundPositionY = "2px";
+      }
+
+      input.addEventListener("focus", animate);
+
+      let header = document.querySelector(".hero-section");
+      function revert() {
+        input.style.width = "6rem";
+        input.style.background = "grey";
+        input.style. backgroundImage = "url('../img/search.png')";
+      }
+
+      header.addEventListener("click", revert);
+    </script>
   </body>
 </html>
