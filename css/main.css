@@ -148,6 +148,11 @@ input[type="text"] {
   margin-top: 0;
   display: block; }
 
+.footer > p {
+  margin-top: -1px;
+  }
+
+
 .footer div p {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana;
   font-size: 10px;
